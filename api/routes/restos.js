@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('express');
-const jwt = require('express-jwt');
+// const jwt = require('express-jwt');
 
 const router = express.Router();
 
@@ -44,21 +44,21 @@ router.route('/:id')
 
     res.json({ data: resto });
   })
-  .post(jwt({ secret }), (req, res, next) => {
-    const { params, body } = req;
-    const { id } = params;
-    const { name, author } = body;
-    const resto = restos.filter((b) => b.id === Number(id)).pop();
+  // .post(jwt({ secret }), (req, res, next) => {
+  //   const { params, body } = req;
+  //   const { id } = params;
+  //   const { name, author } = body;
+  //   const resto = restos.filter((b) => b.id === Number(id)).pop();
 
-    if (!resto) {
-      return res.status(404).send({ data: [] });
-    }
+  //   if (!resto) {
+  //     return res.status(404).send({ data: [] });
+  //   }
 
-    resto.name = name || resto.name;
-    resto.author = author || resto.author;
+  //   resto.name = name || resto.name;
+  //   resto.author = author || resto.author;
 
-    res.json({ data: [ resto ] });
-  });
+  //   res.json({ data: [ resto ] });
+  // });
 
 
 // router.route('/:id')
@@ -89,23 +89,23 @@ router.route('/:id')
 //     res.json({ data: [ resto ] });
 //   });
 
-router.route('/')
-  .get((req, res, next) => {
-    res.json({ data: restos });
-  })
-  .post(jwt({ secret }), (req, res, next) => {
-    const { body } = req;
-    const { name } = body;
+// router.route('/')
+//   .get((req, res, next) => {
+//     res.json({ data: restos });
+//   })
+//   .post(jwt({ secret }), (req, res, next) => {
+//     const { body } = req;
+//     const { name } = body;
 
-    const id = Math.max(...restos.map((b) => b.id)) + 1;
+//     const id = Math.max(...restos.map((b) => b.id)) + 1;
 
-    const resto = {
-      id,
-      name
-    };
+//     const resto = {
+//       id,
+//       name
+//     };
 
-    restos.push(resto);
-    res.json({ data: [{ id }] });
-  });
+//     restos.push(resto);
+//     res.json({ data: [{ id }] });
+//   });
 
 exports.router = router;
