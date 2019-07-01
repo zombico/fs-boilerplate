@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom"
 import './App.css';
-import Fetcher from './components/Fetcher';
+import Demo from './components/Demo';
 
 class App extends Component {
 
   render() {
     return (
       <div className="App">
-        <Fetcher />
+      <Router>
+          <>
+          <Route
+            exact path="/demo"
+            render={() => <Demo /> }
+          />                        
+        </>
+      </Router>
       </div>
     );
   }
