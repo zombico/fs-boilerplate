@@ -130,14 +130,93 @@ a {
   text-decoration: none;
 }
 
+
+.App {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 18px 0px 24px 0px;
+}
+.cityselector {
+  font-size: 1.2em;    
+}
+.loader {
+  background: #237b98;
+  color: white;
+  border: none;
+  font-size: .8em;
+  border-radius: 3px;
+  padding: 12px 12px;
+}
 .restoView {
   display: flex;
   flex-wrap: wrap;
-  
 }
 
+.price-icons {
+  margin-top: 6px;
+  padding-right: 3px;
+  display: flex;
+}
 .restoCard {
-  padding: 4px;
+  display: flex;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  margin-right: 12px;
+  border: none;
+  border-radius: 0px;
+  border-bottom: 1px solid lightgray;
+  max-width: 400px;
+  width: 100%;
+} 
+
+@media (min-width: 400px) {  
+  .restoCard {
+    display: flex;
+    padding: 9px;
+    margin-bottom: 12px;
+    margin-right: 12px;
+    max-width: 400px;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 6px;      
+  }   
+}
+
+.rightside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 21px;
+}
+
+.image-cropper {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.restoPreview {
+  display: inline;
+  margin: 0 auto;  
+  height: 100%;
+  width: 100%;
+}
+
+.restoname {
+  font-size: 1.8em;
+  padding: 21px 0px;
+}
+
+.cardrestoname {
+  font-size: 1.2em;
+  padding-bottom: 6px;
 }
 
 .modal__overlay {
@@ -150,9 +229,8 @@ a {
   background: rgba(0, 0, 0, 0.68);
 }
 
-.modal__view {
-  display: flex;
-  flex-direction: column;
+.modal__view {  
+  text-align: center;
   color: darkslategray;
   position: absolute;
   top: 42%;
@@ -164,4 +242,28 @@ a {
   transform: translate(-50%, -50%);  
   max-width: 400px;
   width: 100%;
+}
+
+.reservation_cta {
+  background: #da3743;
+  padding: 12px;
+  margin-top: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.contact_msg {
+  margin-top: 24px;
+}
+
+.contact_cta {
+  margin-top: 12px;
+  background: lightslategray;
+  padding: 12px;  
+  color: white;
+  cursor: pointer;
+}
+
+.rescta_text {
+  color: white;
 }

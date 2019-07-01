@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import RestoCard from './RestoCard';
-import RestoModal from './RestoModal';
 
 class RestoView extends Component {  
 

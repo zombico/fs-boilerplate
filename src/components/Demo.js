@@ -52,14 +52,16 @@ class Demo extends Component {
   render() {
     return (
       <>
-        <select value={this.state.city} onChange={this.handleChange} name="city">
-          <option> - </option>
-          <option>Toronto</option>
-          <option>New York</option>
-          <option>Chicago</option>
-          <option>New Orleans</option>
-        </select>
-        <button onClick={() => this.loadMore()}>Load More</button>
+        <div className="topbar">
+          <select className="cityselector" value={this.state.city} onChange={this.handleChange} name="city">
+            <option> - </option>
+            <option>Toronto</option>
+            <option>New York</option>
+            <option>Chicago</option>
+            <option>London</option>
+          </select>
+          <button className="loader" onClick={() => this.loadMore()}>Load More</button>
+        </div>
         <RestoView 
           data={this.state.data}
         />

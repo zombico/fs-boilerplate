@@ -16,14 +16,14 @@ class RestoModal extends Component {
     try {
       // set error on cuisine type for restaurant with no response after 6.5 seconds
       setTimeout(()=>{
-        if(this.state.data.name != this.props.info.name) {
+        if(this.state.data.name !== this.props.info.name) {
           const showError = {}
             showError.aggregateRating = {}            
             showError.servesCuisine = 'not available'
             showError.aggregateRating.ratingValue = 'not available'
           this.setState({ data : showError })
         }
-      },6500)
+      },3500)
 
       // get the restaurant from API
       const response = await axios.get(`/restos/${this.props.info.id}`)      
@@ -45,23 +45,34 @@ class RestoModal extends Component {
     return (
       <div className="modal__overlay">
         <div className="modal__view">
-          {this.props.info.name}
-          <br/>          
-          Rating: { rating }
-          <br />
-          Cuisine: { cuisineType }
-          <br />
+        <h1 className="restoname">{this.props.info.name}</h1>          
+          <div>Rating: { rating }</div>
+          <div>Cuisine: { cuisineType }</div>          
           {
             showReserveCta && 
-            <a href={this.props.info.reserve_url} target="_blank">Make a reservation</a>                        
+            <a 
+              href={this.props.info.reserve_url} 
+              target="_blank"              
+            >
+              <p className="reservation_cta">Make a reservation</p>
+            </a>
           }
+          
           {
             rating === 'not available' && 
-            <p>Please contact us at {this.props.info.phone}</p>
+            <>
+            <p className="contact_msg">For reservations, please contact us at </p>
+              <a 
+                href={`tel:${this.props.info.phone}`}
+                target="_blank" 
+                className="rescta_text"
+              > 
+              <p className="contact_cta">{this.props.info.phone}</p>
+              </a>
+            
+            </>
           }
-          <div>
-            <img src={this.props.info.image_url} />
-          </div>
+          
         </div>
       </div>
     );
