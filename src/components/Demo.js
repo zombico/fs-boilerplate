@@ -9,6 +9,11 @@ class Demo extends Component {
     page: 1
   }  
 
+  async componentWillMount() {
+    await this.setState({ city: 'Toronto'})
+    this.getCityRestaurants()
+  }
+
   handleChange = async e => {
     await this.setState({ [e.target.name]: e.target.value });
     this.getCityRestaurants()
@@ -16,7 +21,7 @@ class Demo extends Component {
 
   async getCityRestaurants() {
     try {
-      const response = await axios.get(`https://opentable.herokuapp.com/api/restaurants?city=${this.state.city}&page=${this.state.page}`)      
+      const response = await axios.get(`https://opentable.herokuapp.com/api/restaurants?city=${this.state.city}&page=${this.state.page}&per_page=10`)      
       this.setState({ 
         data: response.data.restaurants
       })
@@ -30,7 +35,7 @@ class Demo extends Component {
     const newPage = this.state.page +1
     await this.setState({ page: newPage })
     try {
-      const response = await axios.get(`https://opentable.herokuapp.com/api/restaurants?city=${this.state.city}&page=${this.state.page}`)
+      const response = await axios.get(`https://opentable.herokuapp.com/api/restaurants?city=${this.state.city}&page=${this.state.page}&per_page=10`)
       let oldData = this.state.data
       let newData = response.data.restaurants
       newData.push(...oldData)
@@ -51,6 +56,8 @@ class Demo extends Component {
           <option> - </option>
           <option>Toronto</option>
           <option>New York</option>
+          <option>Chicago</option>
+          <option>New Orleans</option>
         </select>
         <button onClick={() => this.loadMore()}>Load More</button>
         <RestoView 

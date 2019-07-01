@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import RestoCard from './RestoCard';
+import RestoModal from './RestoModal';
 
-class RestoView extends Component {
-  
+class RestoView extends Component {  
 
   render() {
-    const banana = this.props.data
-    console.log(banana)
-    const view = banana.length > 0 && banana.map(( (cardInfo, index) => 
+    const restoData = this.props.data    
+    const view = restoData.length > 0 && restoData.map(( (cardInfo, index) => 
       <RestoCard 
         info={cardInfo}
         key={index}
@@ -15,7 +14,7 @@ class RestoView extends Component {
     ))
     return (
       <div className="restoView" >
-        {view}
+        {view}        
       </div>
     )
   }
