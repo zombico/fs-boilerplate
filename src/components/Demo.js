@@ -16,7 +16,7 @@ class Demo extends Component {
 
   async getCityRestaurants() {
     try {
-      const response = await axios.get(`http://opentable.herokuapp.com/api/restaurants?city=${this.state.city}&page=${this.state.page}`)      
+      const response = await axios.get(`https://opentable.herokuapp.com/api/restaurants?city=${this.state.city}&page=${this.state.page}`)      
       this.setState({ 
         data: response.data.restaurants
       })
@@ -30,7 +30,7 @@ class Demo extends Component {
     const newPage = this.state.page +1
     await this.setState({ page: newPage })
     try {
-      const response = await axios.get(`http://opentable.herokuapp.com/api/restaurants?city=${this.state.city}&page=${this.state.page}`)
+      const response = await axios.get(`https://opentable.herokuapp.com/api/restaurants?city=${this.state.city}&page=${this.state.page}`)
       let oldData = this.state.data
       let newData = response.data.restaurants
       newData.push(...oldData)

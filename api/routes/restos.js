@@ -28,7 +28,7 @@ router.route('/:id')
   .get(async (req, res, next) => {
     const { params } = req;
     const { id } = params;
-    const url = `http://www.opentable.com/single.aspx?rid=${id}`
+    const url = `https://www.opentable.com/single.aspx?rid=${id}`
     
     const resto = await scrape(url, function(error, metadata){
       const banana = metadata;
