@@ -58,7 +58,7 @@ class Demo extends Component {
             <option>Toronto</option>
             <option>New York</option>
             <option>Chicago</option>
-            <option>London</option>
+            <option>Montreal</option>
           </select>
           <button className="loader" onClick={() => this.loadMore()}>Load More</button>
         </div>

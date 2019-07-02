@@ -134,6 +134,7 @@ a {
 .App {
   padding-left: 5%;
   padding-right: 5%;
+  max-width: 1380px;
 }
 
 .topbar {
@@ -170,7 +171,7 @@ a {
   border: none;
   border-radius: 0px;
   border-bottom: 1px solid lightgray;
-  max-width: 400px;
+  max-width: 416px;
   width: 100%;
 } 
 
@@ -212,11 +213,23 @@ a {
 .restoname {
   font-size: 1.8em;
   padding: 21px 0px;
+  line-height: 1.4em;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+}
+
+.restodesc {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  padding-top: 6px;
 }
 
 .cardrestoname {
   font-size: 1.2em;
   padding-bottom: 6px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  line-height: 1.2em;
 }
 
 .modal__overlay {
@@ -250,10 +263,14 @@ a {
   margin-top: 24px;
   color: white;
   cursor: pointer;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
 }
 
 .contact_msg {
   margin-top: 24px;
+  font-family: 'Nunito Sans', sans-serif;
+
 }
 
 .contact_cta {
@@ -262,6 +279,8 @@ a {
   padding: 12px;  
   color: white;
   cursor: pointer;
+  font-family: 'Nunito Sans', sans-serif;
+  letter-spacing: 1.5px;
 }
 
 .rescta_text {

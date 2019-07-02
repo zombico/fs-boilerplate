@@ -46,8 +46,8 @@ class RestoModal extends Component {
       <div className="modal__overlay">
         <div className="modal__view">
         <h1 className="restoname">{this.props.info.name}</h1>          
-          <div>Rating: { rating }</div>
-          <div>Cuisine: { cuisineType }</div>          
+          <p className="restodesc">Rating: { rating }</p>
+          <p className="restodesc">Cuisine: { cuisineType }</p>
           {
             showReserveCta && 
             <a 

@@ -49,7 +49,7 @@ class RestoCard extends Component {
       <div className="rightside">
         <h3 className="cardrestoname">{this.props.info.name}</h3>
         
-        <p>{this.props.info.address}</p>
+        <p className="restodesc">{this.props.info.address}</p>
                         
         <div className="price-icons">{banana}</div>
       </div>  
