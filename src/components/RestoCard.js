@@ -55,7 +55,8 @@ class RestoCard extends Component {
       </div>  
         {showRestoModal && 
           <RestoModal
-            info={this.props.info}               
+            info={this.props.info}
+            demo={this.props.demo}
           />
         }
       </div>

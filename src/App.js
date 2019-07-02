@@ -5,6 +5,7 @@ import {
 } from "react-router-dom"
 import './App.css';
 import Demo from './components/Demo';
+import DemoData from './components/DemoData';
 
 class App extends Component {
 
@@ -12,11 +13,15 @@ class App extends Component {
     return (
       <div className="App">
       <Router>
-          <>
+        <>
           <Route
             exact path="/demo"
             render={() => <Demo /> }
-          />                        
+          />
+          <Route
+            exact path="/demodata"
+            render={() => <DemoData /> }
+          />
         </>
       </Router>
       </div>

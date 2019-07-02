@@ -9,6 +9,7 @@ class RestoView extends Component {
       <RestoCard 
         info={cardInfo}
         key={index}
+        demo={this.props.demo}
       />
     ))
     return (

@@ -1,44 +1,46 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+	•	How long did you spend on the coding test? What would you add to your solution if you had more time? If you didn't spend much time on the coding test then use this as an opportunity to explain what you would add.
 
-In the project directory, you can run:
+    I spent approximately 22 hours on this solution
 
-### `npm start`
+      > 6 hours on researching and testing a node js scraper that would work with Heroku 
+      > 8 hours integrating the APIs and deploying on Heroku 
+      > 8 hours of coding the front-end with React and CSS          
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    Given more time, I would 
+      > find a scraper that would be able to work when deployed, or debug my implementation to ensure it worked deployed.
+      > improve error handling
+      > write unit tests for components and functions
+      > use SASS to organize the css
+      
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+	•	What was the most useful feature that was added to the latest version of your chosen language? Please include a snippet of code that shows how you've used it.
 
-### `npm test`
+      spread operator in JavaScript is the most useful thing that got added in the ES6 update.  In Demo.js, I use this feature to easily merge new search results into an array.  
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+	•	How would you track down a performance issue in production? Have you ever had to do this?
 
-### `npm run build`
+      Assuming the behavior has been isolated and is replicable, I would first do a trace on the components that in question, and then investigate why the performance is slow.   
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+	•	How would you improve the API that you just used?
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+      I would add a free trial so developers know what they are getting into.  In my experience, the best way to get the most out of an API is to read the docs and use it over and over.  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+	•	Please describe yourself using JSON.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+  {
+    "name": "Franz Ombico",    
+    "preferredLibrary": "ReactJS",
+    "developerProfile": {
+      "front-end": "70%",
+      "back-end": "30%"
+    },
+    "hardware": "Macbook pro 2015",
+    "preferences": {      
+      "editor": "VS Code",
+      "hardware": "Mac OS",
+      "fruit": "mango"
+      "coldDrink": "coke",
+      "hotDrink": "coffee",
+    }
+  }

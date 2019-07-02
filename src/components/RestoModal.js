@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import TestDataFile from './TestDataFile'
 
 class RestoModal extends Component {
   state={
@@ -9,7 +10,15 @@ class RestoModal extends Component {
   }
   
   componentWillMount() {
-    this.getData()
+    if (!this.props.demo) {
+      this.getData()
+    } else {
+      const banana = TestDataFile.filter(resto => resto.id === this.props.info.id)
+      this.setState({ 
+        data: banana[0],
+        showReserveCta: true
+      })
+    }
   }
 
   async getData() {
@@ -42,6 +51,8 @@ class RestoModal extends Component {
     const cuisineType = !this.state.data.servesCuisine ? '...loading' : this.state.data.servesCuisine
     const rating = !this.state.data.aggregateRating ? '...loading' : this.state.data.aggregateRating.ratingValue 
     const showReserveCta = this.state.showReserveCta
+    
+    
     return (
       <div className="modal__overlay">
         <div className="modal__view">
